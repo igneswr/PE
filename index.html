@@ -142,6 +142,14 @@ opacity:0.9;
 line-height:1.7;
 }
 
+/* IMAGE */
+
+.banner{
+width:100%;
+border-radius:12px;
+margin-bottom:25px;
+}
+
 /* GUIDE BOX */
 
 .guide{
@@ -244,23 +252,30 @@ cursor:pointer;
 
 <img src="https://raw.githubusercontent.com/igneswr/PE/refs/heads/main/contents/rules_text.png">
 
-<p>
+<p style="white-space:pre-line;">
 
-Please keep these rules in mind when participating in this community.
+Please keep these rules in mind when participating in this community. These rules apply to everyone
 
-Be kind.  
-Keep it clean.  
-Stay on topic.  
-Avoid drama.  
+Be kind.
+This is an international, diverse community whose common ground is an interest in Pandemic Express. As a member of this community, we expect you to contribute to an environment where everyone feels welcome and included. Be accepting and respectful. Avoid being inflammatory. Don't use excessive pings.
+
+Keep it clean.
+Make sure it's safe-for-work. Avoid derogatory or offensive language.
+
+Stay on topic.
+Please use the respective channels properly.
+
+Avoid any kind of drama.
+Starting drama or making members feel unwelcome is not allowed.
+
 Just be chill.
+We're all here to have fun.
 
 </p>
 
 <div class="modal-buttons">
-
 <button class="btn-red" onclick="closeModal()">Cancel</button>
 <button class="btn-green" onclick="proceedDiscord()">Proceed</button>
-
 </div>
 
 </div>
@@ -269,20 +284,16 @@ Just be chill.
 <!-- NAVBAR -->
 
 <div class="navbar">
-
 <div class="logo">PE: Redux</div>
 
 <div class="nav-links">
-
 <a href="#about">About</a>
 <a href="#roadmap">Roadmap</a>
 <a href="#play">How To Play</a>
 <a href="#server">Host Server</a>
 <a onclick="openModal()">Discord</a>
 <a href="https://www.youtube.com/@PE-Redux" target="_blank">YouTube</a>
-
 </div>
-
 </div>
 
 <!-- HERO -->
@@ -297,9 +308,8 @@ Just be chill.
 A fast-paced zombie escape movement shooter where survival, skill, and teamwork decide your fate.
 </p>
 
-<a href="https://cdn.discordapp.com/attachments/1465140201432285361/1469695776358928505/PERedux.exe"
-class="button"
-target="_blank">
+<a href="https://cdn.discordapp.com/attachments/1465140201432285361/1469695776358928505/PERedux.exe?ex=699e591a&is=699d079a&hm=6139f951be63ba9d0906c14cea34b5ad665f0828d7b17addaf6d815159f8dc96&"
+class="button">
 Download Launcher v1.5.0
 </a>
 
@@ -312,12 +322,64 @@ GitHub
 </a>
 
 </div>
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="section">
+<h2>About The Project</h2>
+
+<p>
+Pandemic Express: Redux is a fully rebuilt, community-driven revival featuring custom servers, authentication, gameplay improvements, and frequent updates.
+</p>
+
+</section>
+
+<!-- ROADMAP -->
+
+<section id="roadmap" class="section">
+
+<h2>Development Roadmap</h2>
+
+<img class="banner"
+src="https://raw.githubusercontent.com/igneswr/PE/refs/heads/main/contents/Roadmap_Pandemic_Express_Redux_FINAL.png">
+
+</section>
+
+<!-- HOW TO PLAY -->
+
+<section id="play" class="section">
+
+<h2>How To Play</h2>
+
+<img class="banner"
+src="https://raw.githubusercontent.com/igneswr/PE/refs/heads/main/contents/how_to_play.png">
+
+<p>
+Players start as humans, with one randomly selected as the initial zombie. Humans must explore the map, loot weapons, and survive long enough to reach and escape on the train.
+</p>
+
+<p>
+If a human is killed or infected, they become a zombie and join the infected team. Zombies must hunt down and infect the remaining survivors before they escape.
+</p>
+
+<p>
+Humans can earn stars by winning or playing matches. Stars can be used to unlock costumes, and some costumes provide special perks that enhance gameplay.
+</p>
+
+<p>
+Zombies can choose different classes, including:
+<br>• Bomber – explodes to damage humans
+<br>• Catcher – balanced class with strong damage
+<br>• Mimic – disguises itself as a human
+<br>• Phantom – can turn invisible temporarily
+</p>
 
 </section>
 
 <!-- SERVER SECTION -->
 
-<section id="server" class="section reveal">
+<section id="server" class="section">
 
 <h2>Host Your Own Server</h2>
 
@@ -331,25 +393,13 @@ target="_blank">
 Download Server Client
 </a>
 
-<h3>Prerequisites and Information</h3>
+<h3>Prerequisites</h3>
 
 <ul>
 <li>NAT Loopback capable router recommended</li>
-<li>If using CGNAT, hosting will NOT work</li>
 <li>Router must support port forwarding</li>
+<li>CGNAT routers cannot host servers</li>
 </ul>
-
-<code>
-Example Port Forward:
-
-GAME SERVER
-Internal Port: 7777
-External Port: 7777
-
-SERVER ADDR
-Internal Port: 7778
-External Port: 7778
-</code>
 
 <h3>Ports You Must Forward</h3>
 
@@ -359,41 +409,6 @@ Server Arbitrator: 2840-2843
 Voice Chat: 2832
 Sync Server: 2932
 </code>
-
-<h3>Server Configuration</h3>
-
-<ul>
-<li>Edit dedicated.cfg → server name, password, IP</li>
-<li>Edit serverx.cfg → balancing settings</li>
-</ul>
-
-<h3>Testing Server</h3>
-
-<ul>
-<li>Launch server</li>
-<li>Check server list</li>
-<li>Connect</li>
-</ul>
-
-<h3>Non NAT Loopback Router Fix</h3>
-
-<ul>
-<li>Open system.cfg</li>
-<li>Comment out:</li>
-</ul>
-
-<code>
-net_customReduxClArbitratorAdr
-net_dedicatedServerArbitratorIP
-</code>
-
-<h3>Custom Maps</h3>
-
-<a href="https://github.com/PEPSIKrus/parkour-map/releases"
-class="button secondary"
-target="_blank">
-Download Parkour Map
-</a>
 
 </div>
 
