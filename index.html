@@ -131,27 +131,25 @@ font-size:38px;
 margin-bottom:15px;
 }
 
-.section p{
+.section h3{
+margin-top:30px;
+color:#00ffa6;
+}
+
+.section p, .section li{
 max-width:900px;
 opacity:0.9;
 line-height:1.7;
 }
 
-/* IMAGE */
-
-.banner{
-width:100%;
-border-radius:12px;
-margin-bottom:25px;
-}
-
-/* SERVER GUIDE */
+/* GUIDE BOX */
 
 .guide{
 background:#11161d;
 padding:30px;
 border-radius:12px;
 line-height:1.8;
+margin-top:20px;
 }
 
 .guide code{
@@ -171,24 +169,6 @@ padding:40px;
 text-align:center;
 background:#070a0f;
 opacity:0.6;
-}
-
-/* ANIMATION */
-
-.reveal{
-opacity:0;
-transform:translateY(40px);
-transition:0.9s;
-}
-
-.reveal.active{
-opacity:1;
-transform:translateY(0);
-}
-
-@keyframes fadeUp{
-from{opacity:0;transform:translateY(40px);}
-to{opacity:1;transform:translateY(0);}
 }
 
 /* MODAL */
@@ -220,12 +200,10 @@ padding:30px;
 border-radius:12px;
 max-width:600px;
 width:90%;
-animation:fadeUp 0.4s ease;
 }
 
 .modal img{
 width:100%;
-border-radius:8px;
 margin-bottom:15px;
 }
 
@@ -254,58 +232,38 @@ border-radius:6px;
 cursor:pointer;
 }
 
-.btn-red:hover{
-background:#cc0000;
-}
-
-.btn-green:hover{
-background:#00cc85;
-}
-
 </style>
 </head>
 
 <body>
 
-<!-- MODAL -->
+<!-- DISCORD MODAL -->
 
 <div id="discordModal" class="modal">
-
 <div class="modal-content">
 
 <img src="https://raw.githubusercontent.com/igneswr/PE/refs/heads/main/contents/rules_text.png">
 
-<p style="white-space:pre-line; opacity:0.9;">
+<p>
 
-Please keep these rules in mind when participating in this community. These rules apply to everyone
+Please keep these rules in mind when participating in this community.
 
-Be kind.
-This is an international, diverse community whose common ground is an interest in Pandemic Express. Be respectful and avoid inflammatory behavior.
-
-Keep it clean.
-Avoid offensive or derogatory language.
-
-Stay on topic.
-Use the correct channels.
-
-Avoid drama.
-Do not create conflict or make members unwelcome.
-
+Be kind.  
+Keep it clean.  
+Stay on topic.  
+Avoid drama.  
 Just be chill.
-We're all here to have fun.
 
 </p>
 
 <div class="modal-buttons">
 
 <button class="btn-red" onclick="closeModal()">Cancel</button>
-
 <button class="btn-green" onclick="proceedDiscord()">Proceed</button>
 
 </div>
 
 </div>
-
 </div>
 
 <!-- NAVBAR -->
@@ -320,9 +278,7 @@ We're all here to have fun.
 <a href="#roadmap">Roadmap</a>
 <a href="#play">How To Play</a>
 <a href="#server">Host Server</a>
-
 <a onclick="openModal()">Discord</a>
-
 <a href="https://www.youtube.com/@PE-Redux" target="_blank">YouTube</a>
 
 </div>
@@ -359,41 +315,7 @@ GitHub
 
 </section>
 
-<!-- ABOUT -->
-
-<section id="about" class="section reveal">
-
-<h2>About The Project</h2>
-
-<p>
-Pandemic Express: Redux is a fully rebuilt, community-driven revival featuring custom servers, authentication, gameplay improvements, and frequent updates.
-</p>
-
-</section>
-
-<!-- ROADMAP -->
-
-<section id="roadmap" class="section reveal">
-
-<h2>Development Roadmap</h2>
-
-<img class="banner"
-src="https://raw.githubusercontent.com/igneswr/PE/refs/heads/main/contents/Roadmap_Pandemic_Express_Redux_FINAL.png">
-
-</section>
-
-<!-- HOW TO PLAY -->
-
-<section id="play" class="section reveal">
-
-<h2>How To Play</h2>
-
-<img class="banner"
-src="https://raw.githubusercontent.com/igneswr/PE/refs/heads/main/contents/how_to_play.png">
-
-</section>
-
-<!-- SERVER -->
+<!-- SERVER SECTION -->
 
 <section id="server" class="section reveal">
 
@@ -401,14 +323,76 @@ src="https://raw.githubusercontent.com/igneswr/PE/refs/heads/main/contents/how_t
 
 <div class="guide">
 
-• NAT Loopback router recommended  
-• Port forwarding capable router  
-• Download Server Client ->  
+<h3>Download Server Client</h3>
 
 <a href="https://github.com/Kornflakes1/PandemicExpressRedux/archive/refs/heads/Server.zip"
 class="button secondary"
 target="_blank">
 Download Server Client
+</a>
+
+<h3>Prerequisites and Information</h3>
+
+<ul>
+<li>NAT Loopback capable router recommended</li>
+<li>If using CGNAT, hosting will NOT work</li>
+<li>Router must support port forwarding</li>
+</ul>
+
+<code>
+Example Port Forward:
+
+GAME SERVER
+Internal Port: 7777
+External Port: 7777
+
+SERVER ADDR
+Internal Port: 7778
+External Port: 7778
+</code>
+
+<h3>Ports You Must Forward</h3>
+
+<code>
+Game Connection: 2838
+Server Arbitrator: 2840-2843
+Voice Chat: 2832
+Sync Server: 2932
+</code>
+
+<h3>Server Configuration</h3>
+
+<ul>
+<li>Edit dedicated.cfg → server name, password, IP</li>
+<li>Edit serverx.cfg → balancing settings</li>
+</ul>
+
+<h3>Testing Server</h3>
+
+<ul>
+<li>Launch server</li>
+<li>Check server list</li>
+<li>Connect</li>
+</ul>
+
+<h3>Non NAT Loopback Router Fix</h3>
+
+<ul>
+<li>Open system.cfg</li>
+<li>Comment out:</li>
+</ul>
+
+<code>
+net_customReduxClArbitratorAdr
+net_dedicatedServerArbitratorIP
+</code>
+
+<h3>Custom Maps</h3>
+
+<a href="https://github.com/PEPSIKrus/parkour-map/releases"
+class="button secondary"
+target="_blank">
+Download Parkour Map
 </a>
 
 </div>
@@ -421,58 +405,18 @@ Pandemic Express Redux © 2026
 
 <script>
 
-/* Reveal animation */
-
-function reveal(){
-
-document.querySelectorAll(".reveal").forEach(el=>{
-
-if(el.getBoundingClientRect().top < window.innerHeight-100){
-
-el.classList.add("active");
-
-}
-
-});
-
-}
-
-window.addEventListener("scroll",reveal);
-reveal();
-
-/* Modal */
-
 function openModal(){
-
 document.getElementById("discordModal").classList.add("active");
-
 }
 
 function closeModal(){
-
 document.getElementById("discordModal").classList.remove("active");
-
 }
 
 function proceedDiscord(){
-
 window.open("https://discord.gg/uVaaJtKz93", "_blank");
-
 closeModal();
-
 }
-
-/* close when clicking outside */
-
-document.getElementById("discordModal").addEventListener("click", function(e){
-
-if(e.target === this){
-
-closeModal();
-
-}
-
-});
 
 </script>
 
