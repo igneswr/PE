@@ -160,41 +160,6 @@ line-height:1.8;
 margin-top:20px;
 }
 
-/* CLASS BOXES */
-
-.class-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:15px;
-margin-top:20px;
-}
-
-.class-box{
-padding:20px;
-border-radius:10px;
-font-weight:bold;
-}
-
-.catcher{background:#1a222c;}
-.mimic{background:#1f3d2b;}
-.phantom{background:#1f2f4d;}
-.bomber{background:#4d1f1f;}
-
-.perk-box{
-background:#1a222c;
-padding:20px;
-border-radius:10px;
-margin-bottom:15px;
-}
-
-.perk-box h4{
-margin:0;
-margin-bottom:5px;
-color:#00ffa6;
-}
-
-/* CODE */
-
 .guide code{
 display:block;
 background:#0a0f14;
@@ -204,6 +169,34 @@ margin-top:10px;
 white-space:pre-wrap;
 color:#00ffa6;
 }
+
+/* INFO GRID */
+
+.info-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:15px;
+margin-top:20px;
+}
+
+.info-box{
+padding:15px;
+border-radius:10px;
+font-weight:bold;
+}
+
+.catcher{background:#2a2a2a;}
+.mimic{background:#1f3d2b;}
+.phantom{background:#1f2f4d;}
+.bomber{background:#4d1f1f;}
+
+.perk-default{background:#2a2a2a;}
+.perk-doubt{background:#4d4d1f;}
+.perk-lover{background:#4d1f3d;}
+.perk-safety{background:#1f4d2b;}
+.perk-vanity{background:#4d1f1f;}
+.perk-leader{background:#1f2f4d;}
+.perk-hope{background:#4d3a1f;}
 
 /* FOOTER */
 
@@ -288,24 +281,13 @@ cursor:pointer;
 <img src="https://raw.githubusercontent.com/igneswr/PE/refs/heads/main/contents/rules_text.png">
 
 <p style="white-space:pre-line;">
-
 Please keep these rules in mind when participating in this community. These rules apply to everyone
 
 Be kind.
-This is an international, diverse community whose common ground is an interest in Pandemic Express. As a member of this community, we expect you to contribute to an environment where everyone feels welcome and included. Be accepting and respectful. Avoid being inflammatory. Don't use excessive pings.
-
 Keep it clean.
-Make sure it's safe-for-work. Avoid derogatory or offensive language.
-
 Stay on topic.
-Please use the respective channels properly.
-
-Avoid any kind of drama.
-Starting drama or making members feel unwelcome is not allowed.
-
+Avoid drama.
 Just be chill.
-We're all here to have fun.
-
 </p>
 
 <div class="modal-buttons">
@@ -367,17 +349,14 @@ GitHub
 <p>
 Pandemic Express: Redux is a fully rebuilt, community-driven revival featuring custom servers, authentication, gameplay improvements, and frequent updates.
 </p>
-
 </section>
 
 <!-- ROADMAP -->
 
 <section id="roadmap" class="section">
 <h2>Development Roadmap</h2>
-
 <img class="banner"
 src="https://raw.githubusercontent.com/igneswr/PE/refs/heads/main/contents/Roadmap_Pandemic_Express_Redux_FINAL.png">
-
 </section>
 
 <!-- HOW TO PLAY -->
@@ -391,70 +370,69 @@ src="https://raw.githubusercontent.com/igneswr/PE/refs/heads/main/contents/how_t
 
 <h3>Zombie Classes</h3>
 
-<div class="class-grid">
+<div class="info-grid">
 
-<div class="class-box catcher">
-Catcher<br>
-Balanced class with strong combat ability.
+<div class="info-box catcher">
+Catcher (Default)  
+Balanced zombie class with reliable damage and mobility.
 </div>
 
-<div class="class-box mimic">
-Mimic<br>
-Can disguise as humans to trick survivors.
+<div class="info-box mimic">
+Mimic  
+Can disguise as humans to deceive survivors.
 </div>
 
-<div class="class-box phantom">
-Phantom<br>
-Can turn invisible temporarily.
+<div class="info-box phantom">
+Phantom  
+Can turn invisible temporarily to ambush humans.
 </div>
 
-<div class="class-box bomber">
-Bomber<br>
-Explodes to damage and infect humans.
+<div class="info-box bomber">
+Bomber  
+Explodes to deal massive damage to humans.
 </div>
 
 </div>
 
 <h3>Human Perks</h3>
 
-<div class="perk-box">
-<h4>Rebellious (Default)</h4>
-Gain 1 armor point on spawn.
+<div class="info-grid">
+
+<div class="info-box perk-default">
+Rebellious (Default)  
+Spawn with +1 armor.
 </div>
 
-<div class="perk-box">
-<h4>Doubtful</h4>
-Carry 3 guns instead of 2. Third gun deals more damage.
+<div class="info-box perk-doubt">
+Doubtful  
+Carry 3 guns, third gun deals increased damage.
 </div>
 
-<div class="perk-box">
-<h4>Lover</h4>
-Gain lifesteal when landing shots on zombies.
+<div class="info-box perk-lover">
+Lover  
+Gain lifesteal when shooting zombies.
 </div>
 
-<div class="perk-box">
-<h4>Safety</h4>
-Spawn with 1 heart and 5 armor. Armor and hearts regenerate.
+<div class="info-box perk-safety">
+Safety  
+Spawn with 5 armor and 1 heart. Armor and hearts regenerate.
 </div>
 
-<div class="perk-box">
-<h4>Vanity</h4>
+<div class="info-box perk-vanity">
+Vanity  
 Triple jump instead of double jump.
 </div>
 
-<div class="perk-box">
-<h4>Leader</h4>
-Faster movement speed and camouflage while crouching/sliding.
+<div class="info-box perk-leader">
+Leader  
+Move faster and camouflage while crouching/sliding.
 </div>
 
-<div class="perk-box">
-<h4>Hopeful</h4>
-Regenerate health constantly and revive zombies with 2 vaccine shots per round.
+<div class="info-box perk-hope">
+Hopeful  
+Regenerate health and revive zombies into humans. 2 uses per round.
 </div>
 
-<div class="perk-box">
-<h4>Event Perks (Secret)</h4>
-Original Doubt and Original Vanity are hidden event perks.
 </div>
 
 </section>
@@ -470,33 +448,15 @@ Original Doubt and Original Vanity are hidden event perks.
 <h3>Prerequisites and Information</h3>
 
 <ul>
+<li><b>NAT Loopback capable router</b></li>
+<li>Non NAT Loopback routers work but joining method differs</li>
+<li>CGNAT routers cannot host servers</li>
 
-<li><b>NAT Loopback capable router</b>
-<ul>
-<li>Non NAT Loopback routers do work but joining differs.</li>
-<li>If you have CG NAT router you cannot host.</li>
+<li><b>Router capable of port forwarding</b></li>
+<li>Some routers require manual internal/external port setup</li>
 </ul>
-</li>
-
-<li><b>Router capable of port forwarding</b>
-<ul>
-<li>Some routers require manual internal/external port setup.</li>
-</ul>
-</li>
-
-<li><b>Game Server Client</b></li>
-
-</ul>
-
-<a href="https://github.com/Kornflakes1/PandemicExpressRedux/tree/Server"
-class="button secondary"
-target="_blank">
-Server Client Download
-</a>
 
 <code>
-Example Port Forward
-
 GAME SERVER
 Internal Port: 7777
 External Port: 7777
@@ -506,25 +466,20 @@ Internal Port: 7778
 External Port: 7778
 </code>
 
-<h3>Ports You Must Forward</h3>
+<h3>Server Port Forwarding</h3>
 
 <code>
 Game Connection: 2838
 Server Arbitrator: 2840, 2841, 2842, 2843
 Voice Chat: 2832
 Sync Server: 2932
-
-Gateway examples:
-192.168.1.1
-192.168.0.1
-192.168.1.254
 </code>
 
 <h3>Server Configuration</h3>
 
 <ul>
-<li>Edit dedicated.cfg for server name/password/IP</li>
-<li>Edit serverx.cfg for balancing</li>
+<li>Edit dedicated.cfg → name, password, IP</li>
+<li>Edit serverx.cfg → balancing</li>
 </ul>
 
 <h3>Testing Server</h3>
@@ -544,6 +499,7 @@ Download Parkour Map
 </a>
 
 </div>
+
 </section>
 
 <div class="footer">
