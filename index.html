@@ -75,19 +75,9 @@ transform:scale(1);
 }
 }
 
-@keyframes pulse{
-0%,100%{transform:scale(1);}
-50%{transform:scale(1.05);}
-}
-
 @keyframes float{
 0%,100%{transform:translateY(0);}
 50%{transform:translateY(-10px);}
-}
-
-@keyframes shimmer{
-0%{background-position:-200% 0;}
-100%{background-position:200% 0;}
 }
 
 @keyframes staggerFade{
@@ -110,6 +100,12 @@ to{
 opacity:1;
 transform:scale(1);
 }
+}
+
+@keyframes bounce{
+0%,20%,50%,80%,100%{transform:translateX(-50%) translateY(0);}
+40%{transform:translateX(-50%) translateY(-10px);}
+60%{transform:translateX(-50%) translateY(-5px);}
 }
 
 /* NAVBAR */
@@ -290,10 +286,6 @@ margin-top:20px;
 animation:scaleIn 0.6s ease;
 }
 
-.guide h3{
-animation:none;
-}
-
 .guide code{
 display:block;
 background:#0a0f14;
@@ -303,10 +295,6 @@ margin-top:10px;
 white-space:pre-wrap;
 color:#00ffa6;
 animation:staggerFade 0.4s ease backwards;
-}
-
-.guide ul{
-animation:none;
 }
 
 /* INFO GRID */
@@ -442,183 +430,6 @@ background:#00cc85;
 transform:scale(1.05);
 }
 
-/* SCROLL REVEAL ANIMATIONS */
-
-.reveal{
-opacity:0;
-transform:translateY(50px);
-transition:all 0.8s ease;
-}
-
-.reveal.active{
-opacity:1;
-transform:translateY(0);
-}
-
-/* PARALLAX EFFECT FOR HERO */
-
-.hero{
-background-attachment:fixed;
-}
-
-/* BUTTON RIPPLE EFFECT */
-
-.button{
-position:relative;
-overflow:hidden;
-}
-
-.button::after{
-content:"";
-position:absolute;
-top:50%;
-left:50%;
-width:0;
-height:0;
-background:rgba(255,255,255,0.3);
-border-radius:50%;
-transform:translate(-50%,-50%);
-transition:width 0.6s, height 0.6s;
-}
-
-.button:hover::after{
-width:300px;
-height:300px;
-}
-
-/* LOADING ANIMATION FOR IMAGES */
-
-.banner, .modal img{
-opacity:0;
-animation:scaleIn 0.6s ease forwards;
-animation-delay:0.2s;
-}
-
-/* HOVER EFFECTS FOR LINKS */
-
-.nav-links a{
-position:relative;
-}
-
-.nav-links a::after{
-content:"";
-position:absolute;
-bottom:-5px;
-left:0;
-width:0;
-height:2px;
-background:#00ffa6;
-transition:width 0.3s ease;
-}
-
-.nav-links a:hover::after{
-width:100%;
-}
-
-/* CARD HOVER EFFECTS */
-
-.info-box{
-position:relative;
-overflow:hidden;
-}
-
-.info-box::before{
-content:"";
-position:absolute;
-top:0;
-left:-100%;
-width:100%;
-height:100%;
-background:linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent);
-transition:left 0.5s ease;
-}
-
-.info-box:hover::before{
-left:100%;
-}
-
-/* GUIDE BOX HOVER */
-
-.guide:hover{
-box-shadow:0 20px 40px rgba(0,0,0,0.4);
-transform:translateY(-2px);
-}
-
-/* SECTION STAGGER ANIMATIONS */
-
-.section > *{
-animation:staggerFade 0.5s ease backwards;
-}
-
-.section > *:nth-child(1){animation-delay:0.1s;}
-.section > *:nth-child(2){animation-delay:0.15s;}
-.section > *:nth-child(3){animation-delay:0.2s;}
-.section > *:nth-child(4){animation-delay:0.25s;}
-.section > *:nth-child(5){animation-delay:0.3s;}
-.section > *:nth-child(6){animation-delay:0.35s;}
-.section > *:nth-child(7){animation-delay:0.4s;}
-.section > *:nth-child(8){animation-delay:0.45s;}
-.section > *:nth-child(9){animation-delay:0.5s;}
-.section > *:nth-child(10){animation-delay:0.55s;}
-
-/* GLOW EFFECT FOR CTA BUTTON */
-
-.button.primary{
-box-shadow:0 0 20px rgba(0,255,166,0.4);
-}
-
-.button.primary:hover{
-box-shadow:0 0 40px rgba(0,255,166,0.6);
-}
-
-/* TEXT GRADIENT ANIMATION */
-
-.hero h1{
-background:linear-gradient(135deg,#ffffff 0%,#00ffa6 100%);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-background-clip:text;
-animation:shimmer 3s ease infinite;
-background-size:200% 200%;
-}
-
-/* SMOOTH SCROLL INDICATOR */
-
-.scroll-indicator{
-position:absolute;
-bottom:30px;
-left:50%;
-transform:translateX(-50%);
-animation:bounce 2s infinite;
-}
-
-@keyframes bounce{
-0%,20%,50%,80%,100%{transform:translateX(-50%) translateY(0);}
-40%{transform:translateX(-50%) translateY(-10px);}
-60%{transform:translateX(-50%) translateY(-5px);}
-}
-
-/* RESPONSIVE ANIMATIONS */
-
-@media (max-width: 768px){
-.hero h1{
-font-size:42px;
-animation:slideInLeft 1s ease 0.5s backwards;
-}
-
-.section{
-padding:60px 30px;
-}
-
-.nav-links{
-gap:15px;
-}
-
-.nav-links a{
-font-size:14px;
-}
-}
-
 </style>
 </head>
 <body>
@@ -658,4 +469,248 @@ Just be chill.
 <a href="#roadmap">Roadmap</a>
 <a href="#play">How To Play</a>
 <a href="#server">Host Server</a>
-<a onclick="openModal()">
+<a onclick="openModal()">Discord</a>
+<a href="https://www.youtube.com/@PE-Redux" target="_blank">YouTube</a>
+</div>
+</div>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Pandemic Express: Redux</h1>
+
+<p>
+A fast-paced zombie escape movement shooter where survival, skill, and teamwork decide your fate.
+</p>
+
+<a href="https://cdn.discordapp.com/attachments/1465140201432285361/1469695776358928505/PERedux.exe?ex=699e591a&is=699d079a&hm=6139f951be63ba9d0906c14cea34b5ad665f0828d7b17addaf6d815159f8dc96&"
+class="button">
+Download Launcher v1.5.0
+</a>
+
+<br>
+
+<a href="https://github.com/Kornflakes1/PandemicExpressRedux"
+class="button secondary"
+target="_blank">
+GitHub
+</a>
+
+</div>
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="section">
+<h2>About The Project</h2>
+
+<p>
+Pandemic Express: Redux is a fully rebuilt, community-driven revival featuring custom servers, authentication, gameplay improvements, and frequent updates.
+</p>
+</section>
+
+<!-- ROADMAP -->
+
+<section id="roadmap" class="section">
+<h2>Development Roadmap</h2>
+<img class="banner"
+src="https://raw.githubusercontent.com/repodatabase/PE/refs/heads/main/contents/Roadmap_Pandemic_Express_Redux_FINAL.png">
+</section>
+
+<!-- HOW TO PLAY -->
+
+<section id="play" class="section">
+
+<h2>How To Play</h2>
+
+<img class="banner"
+src="https://raw.githubusercontent.com/repodatabase/PE/refs/heads/main/contents/how_to_play.png">
+
+<p>
+Each match begins with all players spawning as humans. After a short delay, one randomly selected player becomes the first zombie. Their objective is to infect all humans before they escape. Humans must explore the map quickly, searching buildings, containers, and loot areas to find weapons, ammunition, armor, and useful equipment needed for survival.
+</p>
+
+<p>
+As humans fight and survive, they must work together to reach the train before time runs out. The train is the only way to escape and win the round as a human. Once the train arrives, humans must board it and defend themselves until departure. If a human fails to board the train in time, they will be left behind and lose.
+</p>
+
+<p>
+If a zombie successfully infects a human, that player joins the zombie team and helps hunt the remaining survivors. Zombies grow stronger as their numbers increase, making survival progressively harder for humans.
+</p>
+
+<p>
+Humans earn stars and rewards by surviving rounds, escaping, killing zombies, or completing objectives. These rewards can be used to unlock perks, costumes, and gameplay enhancements that improve survivability or provide strategic advantages.
+</p>
+
+<p>
+The game is heavily focused on teamwork, movement skill, map knowledge, and decision making. Humans must balance looting, fighting, and escaping, while zombies must coordinate attacks, ambush survivors, and prevent escape.
+</p>
+
+<h3>Zombie Classes</h3>
+
+<div class="info-grid">
+
+<div class="info-box catcher">
+Catcher (Default)  
+Balanced zombie class with reliable damage and mobility.
+</div>
+
+<div class="info-box mimic">
+Mimic  
+Can disguise as humans to deceive survivors.
+</div>
+
+<div class="info-box phantom">
+Phantom  
+Can turn invisible temporarily to ambush humans.
+</div>
+
+<div class="info-box bomber">
+Bomber  
+Explodes to deal massive damage to humans.
+</div>
+
+</div>
+
+<h3>Human Perks</h3>
+
+<div class="info-grid">
+
+<div class="info-box perk-default">
+Rebellious (Default)  
+Spawn with +1 armor.
+</div>
+
+<div class="info-box perk-doubt">
+Doubtful  
+Carry 3 guns, third gun deals increased damage.
+</div>
+
+<div class="info-box perk-lover">
+Lover  
+Gain lifesteal when shooting zombies.
+</div>
+
+<div class="info-box perk-safety">
+Safety  
+Spawn with 5 armor and 1 heart. Armor and hearts regenerate.
+</div>
+
+<div class="info-box perk-vanity">
+Vanity  
+Triple jump instead of double jump.
+</div>
+
+<div class="info-box perk-leader">
+Leader  
+Move faster and camouflage while crouching/sliding.
+</div>
+
+<div class="info-box perk-hope">
+Hopeful  
+Regenerate health and revive zombies into humans. 2 uses per round.
+</div>
+
+</div>
+
+</section>
+
+<!-- SERVER SECTION -->
+
+<section id="server" class="section">
+
+<h2>Host Your Own Server</h2>
+
+<div class="guide">
+
+<h3>Server File Download</h3>
+
+<a href="https://github.com/Kornflakes1/PandemicExpressRedux/archive/refs/heads/Server.zip"
+class="button secondary"
+target="_blank">
+Download Server Files
+</a>
+
+<h3>Prerequisites and Information</h3>
+
+<ul>
+<li><b>NAT Loopback capable router</b></li>
+<li>Non NAT Loopback routers work but joining method differs</li>
+<li>CGNAT routers cannot host servers</li>
+
+<li><b>Router capable of port forwarding</b></li>
+<li>Some routers require manual internal/external port setup</li>
+</ul>
+
+<code>
+GAME SERVER
+Internal Port: 7777
+External Port: 7777
+
+SERVER ADDR
+Internal Port: 7778
+External Port: 7778
+</code>
+
+<h3>Server Port Forwarding</h3>
+
+<code>
+Game Connection: 2838
+Server Arbitrator: 2840, 2841, 2842, 2843
+Voice Chat: 2832
+Sync Server: 2932
+</code>
+
+<h3>Server Configuration</h3>
+
+<ul>
+<li>Edit dedicated.cfg → name, password, IP</li>
+<li>Edit serverx.cfg → balancing</li>
+</ul>
+
+<h3>Testing Server</h3>
+
+<ul>
+<li>Launch server</li>
+<li>Check server list</li>
+<li>Connect</li>
+</ul>
+
+<h3>Custom Maps</h3>
+
+<a href="https://github.com/PEPSIKrus/parkour-map/releases"
+class="button secondary"
+target="_blank">
+Download Parkour Map
+</a>
+
+</div>
+
+</section>
+
+<div class="footer">
+Pandemic Express Redux © 2026
+</div>
+
+<script>
+
+function openModal(){
+document.getElementById("discordModal").classList.add("active");
+}
+
+function closeModal(){
+document.getElementById("discordModal").classList.remove("active");
+}
+
+function proceedDiscord(){
+window.open("https://discord.gg/uVaaJtKz93", "_blank");
+closeModal();
+}
+
+</script>
+
+</body>
+</html>
