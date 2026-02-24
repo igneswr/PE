@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pandemic Express: Redux</title>
+
+<style>
+
+/* RESET */
+
+*{
+    box-sizing:border-box;
+}
+
+html, body{
+    margin:0;
+    padding:0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background:#0b0f14;
+    color:white;
+    overflow-x:hidden;
+    scroll-behavior:smooth;
+}
+
+/* NAVBAR */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:rgba(10,15,20,0.95);
+    backdrop-filter:blur(10px);
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:999;
+}
+
+.logo{
+    font-weight:bold;
+    font-size:20px;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-size:15px;
+    transition:0.2s;
+}
+
+.nav-links a:hover{
+    color:#00ffa6;
+}
+
+/* HERO */
+
+.hero{
+    height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)),
+    url("https://raw.githubusercontent.com/igneswr/PE/refs/heads/main/contents/infographic.png");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    padding:0 40px;
+}
+
+.hero-content{
+    max-width:600px;
+}
+
+.hero h1{
+    font-size:56px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    font-size:18px;
+    opacity:0.85;
+}
+
+/* BUTTON */
+
+.button{
+    display:inline-block;
+    margin-top:20px;
+    padding:14px 28px;
+    background:#00ffa6;
+    color:black;
+    font-weight:bold;
+    border-radius:6px;
+    text-decoration:none;
+    transition:0.25s;
+}
+
+.button:hover{
+    background:#00cc85;
+    transform:scale(1.05);
+}
+
+.button.secondary{
+    background:#1a222c;
+    color:white;
+}
+
+.button.secondary:hover{
+    background:#2a3440;
+}
+
+/* SECTION */
+
+.section{
+    padding:80px 40px;
+}
+
+.section h2{
+    font-size:36px;
+}
+
+.section p{
+    max-width:800px;
+    opacity:0.85;
+    line-height:1.6;
+}
+
+/* IMAGES */
+
+.banner{
+    width:100%;
+    max-width:100%;
+    border-radius:10px;
+    margin-top:20px;
+}
+
+/* FEATURES */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-top:25px;
+}
+
+.feature-box{
+    background:#11161d;
+    padding:20px;
+    border-radius:10px;
+}
+
+/* DOWNLOAD BOX */
+
+.download-box{
+    background:#11161d;
+    padding:25px;
+    border-radius:10px;
+    margin-top:20px;
+}
+
+/* FOOTER */
+
+.footer{
+    padding:30px;
+    text-align:center;
+    background:#070a0f;
+    opacity:0.6;
+}
+
+/* ANIMATION */
+
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:0.8s;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+<div class="logo">PE: Redux</div>
+
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#roadmap">Roadmap</a>
+<a href="#play">How To Play</a>
+<a href="#download">Download</a>
+<a href="https://discord.gg/uVaaJtKz93">Discord</a>
+<a href="https://www.youtube.com/@PE-Redux">YouTube</a>
+</div>
+
+</div>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Pandemic Express: Redux</h1>
+
+<p>
+Community-driven zombie escape movement shooter. Fully rebuilt and actively maintained.
+</p>
+
+<a href="https://cdn.discordapp.com/attachments/1465140201432285361/1469695776358928505/PERedux.exe"
+class="button">
+Download Launcher v1.5.0
+</a>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="section reveal">
+
+<h2>About The Project</h2>
+
+<p>
+Pandemic Express: Redux is a fully rebuilt, community-driven version with custom servers, authentication, and frequent updates.
+</p>
+
+<div class="features">
+
+<div class="feature-box">
+<h3>Community Driven</h3>
+<p>Maintained by dedicated players.</p>
+</div>
+
+<div class="feature-box">
+<h3>Frequent Updates</h3>
+<p>Over 25+ patches delivered.</p>
+</div>
+
+<div class="feature-box">
+<h3>Custom Backend</h3>
+<p>New infrastructure and systems.</p>
+</div>
+
+<div class="feature-box">
+<h3>24/7 Servers</h3>
+<p>Always online.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- ROADMAP -->
+
+<section id="roadmap" class="section reveal">
+
+<h2>Development Roadmap</h2>
+
+<img class="banner"
+src="https://raw.githubusercontent.com/igneswr/PE/refs/heads/main/contents/Roadmap_Pandemic_Express_Redux_FINAL.png">
+
+</section>
+
+<!-- HOW TO PLAY -->
+
+<section id="play" class="section reveal">
+
+<h2>How To Play</h2>
+
+<img class="banner"
+src="https://raw.githubusercontent.com/igneswr/PE/refs/heads/main/contents/how_to_play.png">
+
+</section>
+
+<!-- DOWNLOAD -->
+
+<section id="download" class="section reveal">
+
+<h2>Download</h2>
+
+<div class="download-box">
+
+<a href="https://cdn.discordapp.com/attachments/1465140201432285361/1469695776358928505/PERedux.exe"
+class="button">
+Download Launcher
+</a>
+
+<br><br>
+
+<a href="https://github.com/Kornflakes1/PandemicExpressRedux"
+class="button secondary">
+Manual Install (Github)
+</a>
+
+<br><br>
+
+<a href="https://discord.gg/uVaaJtKz93"
+class="button secondary">
+Join Discord
+</a>
+
+<br><br>
+
+<a href="https://www.youtube.com/@PE-Redux"
+class="button secondary">
+YouTube Channel
+</a>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<div class="footer">
+Pandemic Express Redux © 2026
+</div>
+
+<!-- SCROLL ANIMATION -->
+
+<script>
+
+function reveal(){
+
+let elements=document.querySelectorAll(".reveal");
+
+elements.forEach(el=>{
+let top=el.getBoundingClientRect().top;
+if(top < window.innerHeight-100){
+el.classList.add("active");
+}
+});
+
+}
+
+window.addEventListener("scroll",reveal);
+reveal();
+
+</script>
+
+</body>
+</html>
