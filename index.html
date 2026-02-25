@@ -3,16 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Pandemic Express: Redux</title>
-
 <style>
-
 /* RESET */
+
 
 *{
 box-sizing:border-box;
 }
+
 
 html, body{
 margin:0;
@@ -20,11 +19,12 @@ padding:0;
 font-family:"Avenir Next", Avenir, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 background:#0b0f14;
 color:white;
-overflow-x:hidden;
 scroll-behavior:smooth;
 }
 
+
 /* ANIMATIONS */
+
 
 @keyframes fadeUp{
 from{
@@ -37,10 +37,12 @@ transform:translateY(0);
 }
 }
 
+
 @keyframes fadeIn{
 from{opacity:0;}
 to{opacity:1;}
 }
+
 
 @keyframes slideInLeft{
 from{
@@ -53,6 +55,7 @@ transform:translateX(0);
 }
 }
 
+
 @keyframes slideInRight{
 from{
 opacity:0;
@@ -63,6 +66,7 @@ opacity:1;
 transform:translateX(0);
 }
 }
+
 
 @keyframes scaleIn{
 from{
@@ -75,10 +79,12 @@ transform:scale(1);
 }
 }
 
+
 @keyframes float{
 0%,100%{transform:translateY(0);}
 50%{transform:translateY(-10px);}
 }
+
 
 @keyframes staggerFade{
 from{
@@ -91,6 +97,7 @@ transform:translateY(0);
 }
 }
 
+
 @keyframes modalScale{
 from{
 opacity:0;
@@ -102,16 +109,19 @@ transform:scale(1);
 }
 }
 
+
 @keyframes bounce{
 0%,20%,50%,80%,100%{transform:translateX(-50%) translateY(0);}
 40%{transform:translateX(-50%) translateY(-10px);}
 60%{transform:translateX(-50%) translateY(-5px);}
 }
 
+
 @keyframes shimmer{
 0%{background-position:-200% 0;}
 100%{background-position:200% 0;}
 }
+
 
 @keyframes rotateIn{
 from{
@@ -124,6 +134,7 @@ transform:rotate(0) scale(1);
 }
 }
 
+
 @keyframes slideInBottom{
 from{
 opacity:0;
@@ -134,6 +145,7 @@ opacity:1;
 transform:translateY(0);
 }
 }
+
 
 @keyframes blurIn{
 from{
@@ -146,6 +158,7 @@ filter:blur(0);
 }
 }
 
+
 @keyframes zoomIn{
 from{
 opacity:0;
@@ -157,17 +170,21 @@ transform:scale(1);
 }
 }
 
+
 @keyframes pulse{
 0%,100%{transform:scale(1);}
 50%{transform:scale(1.05);}
 }
+
 
 @keyframes glow{
 0%,100%{box-shadow:0 0 20px rgba(0,255,166,0.3);}
 50%{box-shadow:0 0 40px rgba(0,255,166,0.6);}
 }
 
+
 /* NAVBAR */
+
 
 .navbar{
 position:fixed;
@@ -184,6 +201,7 @@ z-index:999;
 animation:slideInTop 0.8s ease;
 }
 
+
 @keyframes slideInTop{
 from{
 opacity:0;
@@ -195,6 +213,7 @@ transform:translateY(0);
 }
 }
 
+
 .logo-img{
 height:40px;
 width:40px;
@@ -203,10 +222,12 @@ object-fit:cover;
 animation:float 3s ease-in-out infinite, glow 3s ease-in-out infinite;
 }
 
+
 .nav-links{
 display:flex;
 gap:20px;
 }
+
 
 .nav-links a{
 color:white;
@@ -218,6 +239,7 @@ cursor:pointer;
 animation:fadeIn 0.6s ease backwards;
 }
 
+
 .nav-links a:nth-child(1){animation-delay:0.1s;}
 .nav-links a:nth-child(2){animation-delay:0.15s;}
 .nav-links a:nth-child(3){animation-delay:0.2s;}
@@ -225,12 +247,15 @@ animation:fadeIn 0.6s ease backwards;
 .nav-links a:nth-child(5){animation-delay:0.3s;}
 .nav-links a:nth-child(6){animation-delay:0.35s;}
 
+
 .nav-links a:hover{
 color:#00ffa6;
 transform:translateY(-3px);
 }
 
+
 /* HERO */
+
 
 .hero{
 height:100vh;
@@ -244,15 +269,18 @@ align-items:center;
 padding:0 60px;
 }
 
+
 .hero-content{
 max-width:650px;
 animation:fadeUp 1s ease 0.3s backwards;
 }
 
+
 .hero h1{
 font-size:64px;
 animation:slideInLeft 1s ease 0.5s backwards;
 }
+
 
 .hero p{
 font-size:19px;
@@ -260,7 +288,9 @@ opacity:0.9;
 animation:slideInRight 1s ease 0.7s backwards;
 }
 
+
 /* BUTTON */
+
 
 .button{
 display:inline-block;
@@ -275,11 +305,13 @@ transition:0.25s;
 animation:scaleIn 0.6s ease 0.9s backwards;
 }
 
+
 .button:hover{
 background:#00cc85;
 transform:scale(1.05);
 box-shadow:0 10px 30px rgba(0,255,166,0.3);
 }
+
 
 .button.secondary{
 background:#1a222c;
@@ -288,21 +320,26 @@ margin-left:10px;
 animation:scaleIn 0.6s ease 1s backwards;
 }
 
+
 .button.secondary:hover{
 background:#2a3440;
 transform:scale(1.05);
 }
 
+
 /* SECTION */
+
 
 .section{
 padding:90px 60px;
 animation:fadeIn 0.8s ease;
 }
 
+
 .section:nth-child(even){
 animation:slideInRight 0.8s ease;
 }
+
 
 .section h2{
 font-size:38px;
@@ -310,11 +347,13 @@ margin-bottom:15px;
 animation:staggerFade 0.6s ease backwards;
 }
 
+
 .section h3{
 margin-top:30px;
 color:#00ffa6;
 animation:staggerFade 0.6s ease 0.1s backwards;
 }
+
 
 .section p, .section li{
 max-width:900px;
@@ -323,11 +362,14 @@ line-height:1.7;
 animation:staggerFade 0.6s ease 0.2s backwards;
 }
 
+
 .section ul{
 animation:staggerFade 0.6s ease 0.3s backwards;
 }
 
+
 /* IMAGE */
+
 
 .banner{
 width:100%;
@@ -336,7 +378,9 @@ margin-bottom:25px;
 animation:scaleIn 0.8s ease 0.4s backwards;
 }
 
+
 /* GUIDE BOX */
+
 
 .guide{
 background:#11161d;
@@ -346,6 +390,7 @@ line-height:1.8;
 margin-top:20px;
 animation:scaleIn 0.6s ease;
 }
+
 
 .guide code{
 display:block;
@@ -358,7 +403,9 @@ color:#00ffa6;
 animation:staggerFade 0.4s ease backwards;
 }
 
+
 /* INFO GRID */
+
 
 .info-grid{
 display:grid;
@@ -366,6 +413,7 @@ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:15px;
 margin-top:20px;
 }
+
 
 .info-box{
 padding:15px;
@@ -375,10 +423,12 @@ animation:staggerFade 0.5s ease backwards;
 transition:0.3s;
 }
 
+
 .info-box:hover{
 transform:translateY(-5px);
 box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
+
 
 .info-box:nth-child(1){animation-delay:0.1s;}
 .info-box:nth-child(2){animation-delay:0.15s;}
@@ -388,10 +438,12 @@ box-shadow:0 10px 30px rgba(0,0,0,0.3);
 .info-box:nth-child(6){animation-delay:0.35s;}
 .info-box:nth-child(7){animation-delay:0.4s;}
 
+
 .catcher{background:#2a2a2a;}
 .mimic{background:#1f3d2b;}
 .phantom{background:#1f2f4d;}
 .bomber{background:#4d1f1f;}
+
 
 .perk-default{background:#2a2a2a;}
 .perk-doubt{background:#4d4d1f;}
@@ -401,7 +453,9 @@ box-shadow:0 10px 30px rgba(0,0,0,0.3);
 .perk-leader{background:#1f2f4d;}
 .perk-hope{background:#4d3a1f;}
 
+
 /* FOOTER */
+
 
 .footer{
 padding:40px;
@@ -411,7 +465,9 @@ opacity:0.6;
 animation:fadeIn 1s ease;
 }
 
+
 /* MODAL */
+
 
 .modal{
 position:fixed;
@@ -429,10 +485,12 @@ transition:0.3s;
 z-index:2000;
 }
 
+
 .modal.active{
 opacity:1;
 pointer-events:auto;
 }
+
 
 .modal-content{
 background:#11161d;
@@ -443,15 +501,18 @@ width:90%;
 animation:modalScale 0.4s ease;
 }
 
+
 .modal img{
 width:100%;
 margin-bottom:15px;
 animation:scaleIn 0.4s ease 0.1s backwards;
 }
 
+
 .modal p{
 animation:staggerFade 0.4s ease 0.2s backwards;
 }
+
 
 .modal-buttons{
 display:flex;
@@ -460,6 +521,7 @@ gap:10px;
 margin-top:20px;
 animation:staggerFade 0.4s ease 0.3s backwards;
 }
+
 
 .btn-red{
 background:#ff4d4d;
@@ -471,10 +533,12 @@ cursor:pointer;
 transition:0.25s;
 }
 
+
 .btn-red:hover{
 background:#ff3333;
 transform:scale(1.05);
 }
+
 
 .btn-green{
 background:#00ffa6;
@@ -486,12 +550,15 @@ cursor:pointer;
 transition:0.25s;
 }
 
+
 .btn-green:hover{
 background:#00cc85;
 transform:scale(1.05);
 }
 
+
 /* SCROLL ANIMATIONS */
+
 
 .scroll-animate{
 opacity:0;
@@ -499,10 +566,12 @@ transform:translateY(50px);
 transition:all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+
 .scroll-animate.visible{
 opacity:1;
 transform:translateY(0);
 }
+
 
 .scroll-animate-left{
 opacity:0;
@@ -510,10 +579,12 @@ transform:translateX(-50px);
 transition:all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+
 .scroll-animate-left.visible{
 opacity:1;
 transform:translateX(0);
 }
+
 
 .scroll-animate-right{
 opacity:0;
@@ -521,10 +592,12 @@ transform:translateX(50px);
 transition:all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+
 .scroll-animate-right.visible{
 opacity:1;
 transform:translateX(0);
 }
+
 
 .scroll-animate-scale{
 opacity:0;
@@ -532,10 +605,12 @@ transform:scale(0.8);
 transition:all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+
 .scroll-animate-scale.visible{
 opacity:1;
 transform:scale(1);
 }
+
 
 .scroll-animate-blur{
 opacity:0;
@@ -543,10 +618,12 @@ filter:blur(10px);
 transition:all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+
 .scroll-animate-blur.visible{
 opacity:1;
 filter:blur(0);
 }
+
 
 .scroll-animate-rotate{
 opacity:0;
@@ -554,12 +631,15 @@ transform:rotate(-5deg) scale(0.9);
 transition:all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+
 .scroll-animate-rotate.visible{
 opacity:1;
 transform:rotate(0) scale(1);
 }
 
+
 /* STAGGER DELAYS */
+
 
 .stagger-1{transition-delay:0.1s;}
 .stagger-2{transition-delay:0.2s;}
@@ -570,7 +650,9 @@ transform:rotate(0) scale(1);
 .stagger-7{transition-delay:0.7s;}
 .stagger-8{transition-delay:0.8s;}
 
+
 /* PARALLAX */
+
 
 .parallax{
 background-attachment:fixed;
@@ -579,7 +661,9 @@ background-repeat:no-repeat;
 background-size:cover;
 }
 
+
 /* PROGRESS BAR */
+
 
 .progress-container{
 position:fixed;
@@ -591,6 +675,7 @@ background:transparent;
 z-index:1000;
 }
 
+
 .progress-bar{
 height:100%;
 background:linear-gradient(90deg, #00ffa6, #00cc85);
@@ -598,7 +683,9 @@ width:0%;
 transition:width 0.1s ease;
 }
 
+
 /* SCROLL TO TOP */
+
 
 .scroll-top{
 position:fixed;
@@ -619,15 +706,18 @@ z-index:999;
 box-shadow:0 5px 20px rgba(0,255,166,0.3);
 }
 
+
 .scroll-top.visible{
 opacity:1;
 visibility:visible;
 }
 
+
 .scroll-top:hover{
 transform:translateY(-5px);
 box-shadow:0 10px 30px rgba(0,255,166,0.5);
 }
+
 
 .scroll-top::after{
 content:"↑";
@@ -636,7 +726,9 @@ color:black;
 font-weight:bold;
 }
 
+
 /* LOADING SCREEN */
+
 
 .loading-screen{
 position:fixed;
@@ -652,14 +744,17 @@ z-index:9999;
 transition:opacity 0.5s ease, visibility 0.5s ease;
 }
 
+
 .loading-screen.hidden{
 opacity:0;
 visibility:hidden;
 }
 
+
 .loading-content{
 text-align:center;
 }
+
 
 .loading-logo{
 width:100px;
@@ -669,11 +764,13 @@ object-fit:cover;
 animation:float 2s ease-in-out infinite;
 }
 
+
 .loading-text{
 margin-top:20px;
 font-size:18px;
 opacity:0.8;
 }
+
 
 .loading-bar{
 width:200px;
@@ -684,6 +781,7 @@ margin-top:20px;
 overflow:hidden;
 }
 
+
 .loading-progress{
 height:100%;
 background:#00ffa6;
@@ -691,39 +789,49 @@ width:0%;
 animation:loading 2s ease-in-out forwards;
 }
 
+
 @keyframes loading{
 0%{width:0%;}
 100%{width:100%;}
 }
 
+
 /* HOVER EFFECTS */
+
 
 .hover-lift{
 transition:transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 .hover-lift:hover{
 transform:translateY(-10px);
 box-shadow:0 20px 40px rgba(0,0,0,0.4);
 }
 
+
 .hover-glow{
 transition:box-shadow 0.3s ease;
 }
+
 
 .hover-glow:hover{
 box-shadow:0 0 30px rgba(0,255,166,0.4);
 }
 
+
 .hover-scale{
 transition:transform 0.3s ease;
 }
+
 
 .hover-scale:hover{
 transform:scale(1.05);
 }
 
+
 /* CARD */
+
 
 .card{
 background:#11161d;
@@ -732,12 +840,15 @@ padding:20px;
 transition:all 0.3s ease;
 }
 
+
 .card:hover{
 transform:translateY(-5px);
 box-shadow:0 15px 40px rgba(0,0,0,0.3);
 }
 
+
 /* TEXT EFFECTS */
+
 
 .text-gradient{
 background:linear-gradient(135deg, #00ffa6, #00cc85);
@@ -746,7 +857,9 @@ background:linear-gradient(135deg, #00ffa6, #00cc85);
 background-clip:text;
 }
 
+
 /* CREDITS SECTION */
+
 
 .credits-grid{
 display:grid;
@@ -754,6 +867,7 @@ grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:30px;
 margin-top:30px;
 }
+
 
 .credit-item{
 background:#11161d;
@@ -764,14 +878,17 @@ transition:all 0.3s ease;
 animation:scaleIn 0.6s ease backwards;
 }
 
+
 .credit-item:hover{
 transform:translateY(-10px);
 box-shadow:0 20px 40px rgba(0,0,0,0.4);
 }
 
+
 .credit-item:nth-child(1){animation-delay:0.1s;}
 .credit-item:nth-child(2){animation-delay:0.2s;}
 .credit-item:nth-child(3){animation-delay:0.3s;}
+
 
 .credit-item img{
 width:100%;
@@ -779,50 +896,60 @@ border-radius:8px;
 transition:transform 0.3s ease;
 }
 
+
 .credit-item:hover img{
 transform:scale(1.05);
 }
 
+
 .credit-item h3{
+color:#00ffa6;
+margin.credit-item h3{
 color:#00ffa6;
 margin-bottom:15px;
 font-size:20px;
 }
 
+
 /* RESPONSIVE */
+
 
 @media (max-width: 768px){
 .hero h1{
 font-size:42px;
 }
 
+
 .section{
 padding:60px 30px;
 }
+
 
 .nav-links{
 gap:15px;
 }
 
+
 .nav-links a{
 font-size:14px;
 }
 
+
 .scroll-animate, .scroll-animate-left, .scroll-animate-right{
 transform:translateY(30px);
 }
+
 
 .credits-grid{
 grid-template-columns:1fr;
 }
 }
 
+
 </style>
 </head>
 <body>
-
 <!-- LOADING SCREEN -->
-
 <div class="loading-screen" id="loadingScreen">
 <div class="loading-content">
 <img src="https://raw.githubusercontent.com/repodatabase/PE/refs/heads/main/contents/icon.png" class="loading-logo" alt="Loading">
@@ -832,50 +959,35 @@ grid-template-columns:1fr;
 </div>
 </div>
 </div>
-
 <!-- PROGRESS BAR -->
-
 <div class="progress-container">
 <div class="progress-bar" id="progressBar"></div>
 </div>
-
 <!-- SCROLL TO TOP BUTTON -->
-
 <div class="scroll-top" id="scrollTop"></div>
-
 <!-- DISCORD MODAL -->
-
 <div id="discordModal" class="modal">
 <div class="modal-content">
-
 <img src="https://raw.githubusercontent.com/repodatabase/PE/refs/heads/main/contents/rules_text.png">
-
 <p style="white-space:pre-line;">
 Please keep these rules in mind when participating in this community. These rules apply to everyone
-
 Be kind.
 Keep it clean.
 Stay on topic.
 Avoid drama.
 Just be chill.
 </p>
-
 <div class="modal-buttons">
 <button class="btn-red" onclick="closeModal()">Cancel</button>
 <button class="btn-green" onclick="proceedDiscord()">Proceed</button>
 </div>
-
 </div>
 </div>
-
 <!-- NAVBAR -->
-
 <div class="navbar">
 <img src="https://raw.githubusercontent.com/repodatabase/PE/refs/heads/main/contents/icon.png" class="logo-img" alt="PE: Redux Logo">
-
 <div class="nav-links">
 <a href="#about">About</a>
-<a href="#roadmap">Roadmap</a>
 <a href="#play">How To Play</a>
 <a href="#server">Host Server</a>
 <a href="#credits">Credits</a>
@@ -883,257 +995,182 @@ Just be chill.
 <a href="https://www.youtube.com/@PE-Redux" target="_blank">YouTube</a>
 </div>
 </div>
-
 <!-- HERO -->
-
 <section class="hero parallax">
-
 <div class="hero-content">
-
 <h1>Pandemic Express: Redux</h1>
-
 <p>
 A fast-paced zombie escape movement shooter where survival, skill, and teamwork decide your fate.
 </p>
-
 <a href="https://cdn.discordapp.com/attachments/1465140201432285361/1469695776358928505/PERedux.exe?ex=699e591a&is=699d079a&hm=6139f951be63ba9d0906c14cea34b5ad665f0828d7b17addaf6d815159f8dc96&"
 class="button hover-glow">
 Download Launcher v1.5.0
 </a>
-
 <br>
-
 <a href="https://github.com/Kornflakes1/PandemicExpressRedux"
 class="button secondary hover-scale"
 target="_blank">
 GitHub
 </a>
-
+<a onclick="openModal()"
+class="button secondary hover-scale">
+Discord
+</a>
 </div>
 </section>
-
 <!-- ABOUT -->
-
 <section id="about" class="section scroll-animate">
 <h2 class="text-gradient">About The Project</h2>
-
 <p>
 Pandemic Express: Redux is a fully rebuilt, community-driven revival featuring custom servers, authentication, gameplay improvements, and frequent updates.
 </p>
 </section>
-
-<!-- ROADMAP -->
-
-<section id="roadmap" class="section scroll-animate">
-<h2 class="text-gradient">Development Roadmap</h2>
-<img class="banner scroll-animate stagger-2"
-src="https://raw.githubusercontent.com/repodatabase/PE/refs/heads/main/contents/Roadmap_Pandemic_Express_Redux_FINAL.png">
-</section>
-
 <!-- HOW TO PLAY -->
-
 <section id="play" class="section">
-
 <h2 class="text-gradient scroll-animate">How To Play</h2>
-
 <img class="banner scroll-animate stagger-1"
 src="https://raw.githubusercontent.com/repodatabase/PE/refs/heads/main/contents/how_to_play.png">
-
 <p class="scroll-animate stagger-2">
 Each match begins with all players spawning as humans. After a short delay, one randomly selected player becomes the first zombie. Their objective is to infect all humans before they escape. Humans must explore the map quickly, searching buildings, containers, and loot areas to find weapons, ammunition, armor, and useful equipment needed for survival.
 </p>
-
 <p class="scroll-animate stagger-3">
 As humans fight and survive, they must work together to reach the train before time runs out. The train is the only way to escape and win the round as a human. Once the train arrives, humans must board it and defend themselves until departure. If a human fails to board the train in time, they will be left behind and lose.
 </p>
-
 <p class="scroll-animate stagger-4">
 If a zombie successfully infects a human, that player joins the zombie team and helps hunt the remaining survivors. Zombies grow stronger as their numbers increase, making survival progressively harder for humans.
 </p>
-
 <p class="scroll-animate stagger-5">
 Humans earn stars and rewards by surviving rounds, escaping, killing zombies, or completing objectives. These rewards can be used to unlock perks, costumes, and gameplay enhancements that improve survivability or provide strategic advantages.
 </p>
-
 <p class="scroll-animate stagger-6">
 The game is heavily focused on teamwork, movement skill, map knowledge, and decision making. Humans must balance looting, fighting, and escaping, while zombies must coordinate attacks, ambush survivors, and prevent escape.
 </p>
-
 <h3 class="scroll-animate stagger-2">Zombie Classes</h3>
-
 <div class="info-grid">
-
 <div class="info-box catcher hover-lift scroll-animate stagger-3">
 Catcher (Default)  
 Balanced zombie class with reliable damage and mobility.
 </div>
-
 <div class="info-box mimic hover-lift scroll-animate stagger-4">
 Mimic  
 Can disguise as humans to deceive survivors.
 </div>
-
 <div class="info-box phantom hover-lift scroll-animate stagger-5">
 Phantom  
 Can turn invisible temporarily to ambush humans.
 </div>
-
 <div class="info-box bomber hover-lift scroll-animate stagger-6">
 Bomber  
 Explodes to deal massive damage to humans.
 </div>
-
 </div>
-
 <h3 class="scroll-animate stagger-2">Human Perks</h3>
-
 <div class="info-grid">
-
 <div class="info-box perk-default hover-lift scroll-animate stagger-3">
 Rebellious (Default)  
 Spawn with +1 armor.
 </div>
-
 <div class="info-box perk-doubt hover-lift scroll-animate stagger-4">
 Doubtful  
 Carry 3 guns, third gun deals increased damage.
 </div>
-
 <div class="info-box perk-lover hover-lift scroll-animate stagger-5">
 Lover  
 Gain lifesteal when shooting zombies.
 </div>
-
 <div class="info-box perk-safety hover-lift scroll-animate stagger-6">
 Safety  
 Spawn with 5 armor and 1 heart. Armor and hearts regenerate.
 </div>
-
 <div class="info-box perk-vanity hover-lift scroll-animate stagger-7">
 Vanity  
 Triple jump instead of double jump.
 </div>
-
 <div class="info-box perk-leader hover-lift scroll-animate stagger-8">
 Leader  
 Move faster and camouflage while crouching/sliding.
 </div>
-
 <div class="info-box perk-hope hover-lift scroll-animate stagger-8">
 Hopeful  
 Regenerate health and revive zombies into humans. 2 uses per round.
 </div>
-
 </div>
-
+</div>
 </section>
-
 <!-- SERVER SECTION -->
-
 <section id="server" class="section">
-
 <h2 class="text-gradient scroll-animate">Host Your Own Server</h2>
-
 <div class="guide hover-lift scroll-animate stagger-1">
-
 <h3 class="scroll-animate stagger-2">Server File Download</h3>
-
 <a href="https://github.com/Kornflakes1/PandemicExpressRedux/archive/refs/heads/Server.zip"
 class="button secondary hover-scale"
 target="_blank">
 Download Server Files
 </a>
-
 <h3 class="scroll-animate stagger-2">Prerequisites and Information</h3>
-
 <ul class="scroll-animate stagger-3">
 <li><b>NAT Loopback capable router</b></li>
 <li>Non NAT Loopback routers work but joining method differs</li>
 <li>CGNAT routers cannot host servers</li>
-
 <li><b>Router capable of port forwarding</b></li>
 <li>Some routers require manual internal/external port setup</li>
 </ul>
-
 <code class="scroll-animate stagger-4">
 GAME SERVER
 Internal Port: 7777
 External Port: 7777
-
 SERVER ADDR
 Internal Port: 7778
 External Port: 7778
 </code>
-
 <h3 class="scroll-animate stagger-3">Server Port Forwarding</h3>
-
 <code class="scroll-animate stagger-4">
 Game Connection: 2838
 Server Arbitrator: 2840, 2841, 2842, 2843
 Voice Chat: 2832
 Sync Server: 2932
 </code>
-
 <h3 class="scroll-animate stagger-3">Server Configuration</h3>
-
 <ul class="scroll-animate stagger-4">
 <li>Edit dedicated.cfg → name, password, IP</li>
 <li>Edit serverx.cfg → balancing</li>
 </ul>
-
 <h3 class="scroll-animate stagger-3">Testing Server</h3>
-
 <ul class="scroll-animate stagger-4">
 <li>Launch server</li>
 <li>Check server list</li>
 <li>Connect</li>
 </ul>
-
 <h3 class="scroll-animate stagger-3">Custom Maps</h3>
-
 <a href="https://github.com/PEPSIKrus/parkour-map/releases"
 class="button secondary hover-scale"
 target="_blank">
 Download Parkour Map
 </a>
-
 </div>
-
 </section>
-
 <!-- CREDITS SECTION -->
-
 <section id="credits" class="section">
-
 <h2 class="text-gradient scroll-animate">Credits</h2>
-
 <div class="credits-grid">
-
 <div class="credit-item scroll-animate stagger-1">
 <h3>Admins</h3>
 <img src="https://raw.githubusercontent.com/repodatabase/PE/refs/heads/main/contents/Admins.png" alt="Admins">
 </div>
-
 <div class="credit-item scroll-animate stagger-2">
 <h3>Contributors</h3>
 <img src="https://raw.githubusercontent.com/repodatabase/PE/refs/heads/main/contents/Contributors.png" alt="Contributors">
 </div>
-
 <div class="credit-item scroll-animate stagger-3">
 <h3>Modders</h3>
 <img src="https://raw.githubusercontent.com/repodatabase/PE/refs/heads/main/contents/Modders.png" alt="Modders">
 </div>
-
 </div>
-
 </section>
-
 <div class="footer scroll-animate">
 Pandemic Express Redux © 2026
 </div>
-
 <script>
-
 // LOADING SCREEN
 window.addEventListener('load', function() {
 setTimeout(function(){
@@ -1141,8 +1178,10 @@ document.getElementById('loadingScreen').classList.add('hidden');
 }, 2500);
 });
 
+
 // SCROLL ANIMATIONS
 const scrollElements = document.querySelectorAll('.scroll-animate, .scroll-animate-left, .scroll-animate-right, .scroll-animate-scale, .scroll-animate-blur, .scroll-animate-rotate');
+
 
 const elementInView = (el, dividend = 1) => {
 const elementTop = el.getBoundingClientRect().top;
@@ -1151,9 +1190,11 @@ elementTop <= (window.innerHeight || document.documentElement.clientHeight) / di
 );
 };
 
+
 const displayScrollElement = (element) => {
 element.classList.add('visible');
 };
+
 
 const handleScrollAnimation = () => {
 scrollElements.forEach((el) => {
@@ -1162,6 +1203,7 @@ displayScrollElement(el);
 }
 });
 };
+
 
 let throttleTimer;
 const throttle = (callback, time) => {
@@ -1172,12 +1214,15 @@ setTimeout(callback, time);
 }
 };
 
+
 window.addEventListener('scroll', () => {
 throttle(handleScrollAnimation, 200);
 });
 
+
 // INITIAL CHECK
 handleScrollAnimation();
+
 
 // PROGRESS BAR
 window.addEventListener('scroll', () => {
@@ -1187,8 +1232,10 @@ const scrolled = (winScroll / height) * 100;
 document.getElementById('progressBar').style.width = scrolled + '%';
 });
 
+
 // SCROLL TO TOP BUTTON
 const scrollTopBtn = document.getElementById('scrollTop');
+
 
 window.addEventListener('scroll', () => {
 if (window.pageYOffset > 300) {
@@ -1198,6 +1245,7 @@ scrollTopBtn.classList.remove('visible');
 }
 });
 
+
 scrollTopBtn.addEventListener('click', () => {
 window.scrollTo({
 top: 0,
@@ -1205,19 +1253,23 @@ behavior: 'smooth'
 });
 });
 
+
 // MODAL FUNCTIONS
 function openModal(){
 document.getElementById("discordModal").classList.add("active");
 }
 
+
 function closeModal(){
 document.getElementById("discordModal").classList.remove("active");
 }
+
 
 function proceedDiscord(){
 window.open("https://discord.gg/uVaaJtKz93", "_blank");
 closeModal();
 }
+
 
 // SMOOTH SCROLL FOR NAV LINKS
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1229,6 +1281,7 @@ behavior: 'smooth'
 });
 });
 
+
 // PARALLAX EFFECT FOR HERO
 window.addEventListener('scroll', () => {
 const hero = document.querySelector('.hero');
@@ -1236,8 +1289,10 @@ let scrollPosition = window.pageYOffset;
 hero.style.backgroundPositionY = (scrollPosition * 0.5) + 'px';
 });
 
+
 // NAVBAR BACKGROUND ON SCROLL
 const navbar = document.querySelector('.navbar');
+
 
 window.addEventListener('scroll', () => {
 if (window.scrollY > 50) {
@@ -1249,17 +1304,21 @@ navbar.style.boxShadow = 'none';
 }
 });
 
+
 // MOUSE MOVE PARALLAX FOR HERO CONTENT
 document.addEventListener('mousemove', (e) => {
 const heroContent = document.querySelector('.hero-content');
 const x = (window.innerWidth - e.pageX * 2) / 100;
 const y = (window.innerHeight - e.pageY * 2) / 100;
 
+
 heroContent.style.transform = `translateX(${x}px) translateY(${y}px)`;
 });
 
+
 // STAGGERED ANIMATION FOR GRID ITEMS ON SCROLL
 const infoBoxes = document.querySelectorAll('.info-box');
+
 
 infoBoxes.forEach((box, index) => {
 box.style.opacity = '0';
@@ -1267,10 +1326,12 @@ box.style.transform = 'translateY(30px)';
 box.style.transition = 'all 0.5s ease ' + (index * 0.1) + 's';
 });
 
+
 const observerOptions = {
 threshold: 0.2,
 rootMargin: "0px"
 };
+
 
 const observer = new IntersectionObserver((entries) => {
 entries.forEach(entry => {
@@ -1281,15 +1342,18 @@ entry.target.style.transform = 'translateY(0)';
 });
 }, observerOptions);
 
+
 infoBoxes.forEach(box => {
 observer.observe(box);
 });
+
 
 // BUTTON RIPPLE EFFECT
 document.querySelectorAll('.button').forEach(button => {
 button.addEventListener('click', function(e){
 let x = e.clientX - e.target.offsetLeft;
 let y = e.clientY - e.target.offsetTop;
+
 
 let ripples = document.createElement('span');
 ripples.style.left = x + 'px';
@@ -1301,7 +1365,9 @@ ripples.style.pointerEvents = 'none';
 ripples.style.borderRadius = '50%';
 ripples.style.animation = 'ripple 1s linear infinite';
 
+
 this.appendChild(ripples);
+
 
 setTimeout(() => {
 ripples.remove();
@@ -1309,25 +1375,13 @@ ripples.remove();
 });
 });
 
+
 // RIPPLE ANIMATION KEYFRAMES
 const style = document.createElement('style');
-style.innerHTML = `
-@keyframes ripple {
-0% {
-width: 0;
-height: 0;
-opacity: 0.5;
-}
-100% {
-width: 500px;
-height: 500px;
-opacity: 0;
-}
-}
-`;
+style.innerHTML = `@keyframes ripple { 0% { width: 0; height: 0; opacity: 0.5; } 100% { width: 500px; height: 500px; opacity: 0; } }`;
 document.head.appendChild(style);
 
-</script>
 
+</script>
 </body>
 </html>
